@@ -8,8 +8,8 @@
 	--hero-bg: #4f2f50;
 	--hero-text: #f5f5f7;
 	--hero-muted: rgba(245, 245, 247, 0.76);
-	--pill-bg: #ffffff;
-	--pill-text: #111111;
+	--pill-bg: #8965d7;
+	--pill-text: #f5f5f7;
 	--pill-border: rgba(17, 17, 17, 0.1);
 	--shadow: 0 24px 60px rgba(17, 17, 17, 0.12);
 	--radius-xl: 32px;
@@ -49,20 +49,23 @@ a {
 }
 
 .topbar {
-	position: sticky;
-	top: 0;
+	position: fixed;
+	top: 12px;
+	left: 50%;
+	transform: translateX(-50%);
 	z-index: 10;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	gap: 20px;
 	padding: 16px 22px;
-	margin-bottom: 22px;
 	border: 1px solid var(--surface-border);
 	border-radius: var(--radius-pill);
 	background: var(--surface);
 	backdrop-filter: blur(18px);
 	box-shadow: var(--shadow);
+	width: max-content;
+	max-width: calc(100% - 40px);
 }
 
 .brand {
@@ -94,7 +97,6 @@ a {
 	height: clamp(360px, 62.5vw, 80vh);
 	min-height: 360px;
 	min-width: 0;
-	border-radius: calc(var(--radius-xl) + 8px);
 	background-image:
 		url(Assets/HeroBanner.png),
 		linear-gradient(180deg, #9071ff 0%, var(--hero-bg) 72%);
@@ -104,6 +106,7 @@ a {
 	color: var(--hero-text);
 	overflow: hidden;
 	box-shadow: var(--shadow);
+	margin: -20px -20px 0 -20px;
 }
 
 .hero-inner {
@@ -111,7 +114,7 @@ a {
 	display: grid;
 	align-items: start;
 	justify-items: center;
-	padding: 72px 28px 56px;
+	padding: 96px 28px 56px;
 	text-align: center;
 }
 
@@ -173,9 +176,10 @@ a {
 }
 
 .pill-button.secondary {
-	color: var(--hero-text);
-	border-color: rgba(255, 255, 255, 0.16);
+	color: var(--pill-bg);
+	border-color: var(--pill-bg);
 	background: rgba(255, 255, 255, 0.04);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.11);
 }
 
 .split-section {
@@ -198,11 +202,7 @@ a {
 .split-media {
 	display: grid;
 	place-items: center;
-	background: linear-gradient(
-		145deg,
-		rgba(17, 17, 17, 0.96),
-		rgba(33, 33, 33, 0.82)
-	);
+	background: linear-gradient(150deg, #9074cd, #4f2f50);
 	color: rgba(255, 255, 255, 0.76);
 }
 
@@ -212,12 +212,7 @@ a {
 	border-radius: 26px;
 	border: 1px solid rgba(255, 255, 255, 0.16);
 	background:
-		linear-gradient(
-			135deg,
-			rgba(255, 255, 255, 0.12),
-			rgba(255, 255, 255, 0.03)
-		),
-		rgba(255, 255, 255, 0.04);
+		linear-gradient(135deg, #222222, #4f2f50), rgba(255, 255, 255, 0.04);
 	display: grid;
 	place-items: center;
 	font-size: 0.95rem;
