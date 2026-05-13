@@ -12,8 +12,8 @@
 				<a class="brand" href="#">ConType</a>
 				<nav class="topnav" aria-label="Primary">
 					<a href="#features">Features</a>
-					<a href="#privacy-policy">Privacy Policy</a>
-					<a href="#support">Support</a>
+					<a href="./privacy-policy/">Privacy Policy</a>
+					<a href="./support/">Support</a>
 				</nav>
 			</header>
 
@@ -38,23 +38,109 @@
 				</section>
 
 				<section class="split-section" id="features">
-					<div class="split-panel split-media" aria-label="Image placeholder">
-						<div class="media-placeholder">Image placeholder</div>
+					<div class="split-panel split-media" aria-label="The keyboard">
+						<img
+							src="Assets/Keyboard.png"
+							alt="ConType's virtual keyboard in action"
+							class="feature-image"
+						/>
 					</div>
-
 					<div class="split-panel split-copy">
-						<p class="eyebrow">Feature area</p>
-						<h2>
-							Use this section for a visual on one side and supporting copy on
-							the other.
-						</h2>
+						<p class="eyebrow">Welcome to ConType</p>
+						<h2>A virtual keyboard designed for your controller.</h2>
 						<p>
-							This block is set up as a flexible two-column layout, so you can
-							place a screenshot, illustration, or product image on the left and
-							marketing text on the right without changing the structure.
+							ConType enables your controller to work as a virtual keyboard.
+							Easily bring it up via a customizable hotkey, and start typing
+							immediately.
 						</p>
 					</div>
+					<div class="split-panel split-copy" aria-label="The keyboard">
+						<p class="eyebrow">Customizable</p>
+						<h2>Set it to your heart's content</h2>
+						<p>
+							Make ConType truly yours by changing how it works. Change a
+							variety of settings to suit your preferences.
+						</p>
+					</div>
+					<div class="split-panel split-media">
+						<img
+							src="Assets/Settings.png"
+							alt="ConType's virtual keyboard in action"
+							class="feature-image"
+						/>
+					</div>
 				</section>
+
+				<section
+					class="carousel-section"
+					id="feature-carousel"
+					aria-labelledby="carousel-title"
+					aria-roledescription="carousel"
+				>
+					<button
+						class="carousel-nav carousel-nav-prev"
+						type="button"
+						data-carousel-nav="prev"
+					>
+						<span class="sr-only">Previous slide</span>
+					</button>
+					<div class="carousel-shell">
+						<p class="eyebrow">Experience</p>
+						<h2 class="carousel-heading" id="carousel-title">
+							See what ConType can do
+						</h2>
+						<img
+							src="Assets/HeroBanner.png"
+							alt="ConType controller-focused hero banner"
+							class="carousel-image"
+							data-carousel-image
+						/>
+						<div class="carousel-caption" aria-live="polite">
+							<h3 class="carousel-slide-title" data-carousel-title>
+								Control your Mac from a controller.
+							</h3>
+							<p class="carousel-slide-copy" data-carousel-description>
+								ConType turns your controller into a faster way to navigate,
+								type, and trigger actions without touching the keyboard.
+							</p>
+						</div>
+						<div
+							class="carousel-dots"
+							role="tablist"
+							aria-label="Carousel slides"
+							data-carousel-dots
+						>
+							<button
+								class="carousel-dot is-active"
+								type="button"
+								data-carousel-dot="0"
+								aria-current="true"
+								aria-label="Show slide 1"
+							></button>
+							<button
+								class="carousel-dot"
+								type="button"
+								data-carousel-dot="1"
+								aria-label="Show slide 2"
+							></button>
+							<button
+								class="carousel-dot"
+								type="button"
+								data-carousel-dot="2"
+								aria-label="Show slide 3"
+							></button>
+						</div>
+					</div>
+					<button
+						class="carousel-nav carousel-nav-next"
+						type="button"
+						data-carousel-nav="next"
+					>
+						<span class="sr-only">Next slide</span>
+					</button>
+				</section>
+
+				<script src="script.js" defer></script>
 			</main>
 		</div>
 	</body>
