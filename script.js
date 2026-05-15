@@ -27,17 +27,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	const updateCarousel = (slideIndex) => {
 		currentSlide = (slideIndex + slideData.length) % slideData.length;
-		
+
 		// Update track position
 		track.style.transform = `translateX(-${currentSlide * 100}%)`;
-		
+
 		// Update dots
 		dots.forEach((dot, i) => {
 			const isActive = i === currentSlide;
 			dot.classList.toggle("is-active", isActive);
 			dot.setAttribute("aria-selected", isActive);
 		});
-		
+
 		// Update caption and credit
 		captionEl.textContent = slideData[currentSlide].caption;
 		creditEl.textContent = slideData[currentSlide].credit;
