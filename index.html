@@ -71,73 +71,29 @@
 					</div>
 				</section>
 
-				<section
-					class="carousel-section"
-					id="feature-carousel"
-					aria-labelledby="carousel-title"
-					aria-roledescription="carousel"
-				>
-					<button
-						class="carousel-nav carousel-nav-prev"
-						type="button"
-						data-carousel-nav="prev"
-					>
-						<span class="sr-only">Previous slide</span>
-					</button>
-					<div class="carousel-shell">
-						<p class="eyebrow">Experience</p>
-						<h2 class="carousel-heading" id="carousel-title">
-							See what ConType can do
-						</h2>
-						<img
-							src="Assets/HeroBanner.png"
-							alt="ConType controller-focused hero banner"
-							class="carousel-image"
-							data-carousel-image
-						/>
-						<div class="carousel-caption" aria-live="polite">
-							<h3 class="carousel-slide-title" data-carousel-title>
-								Control your Mac from a controller.
-							</h3>
-							<p class="carousel-slide-copy" data-carousel-description>
-								ConType turns your controller into a faster way to navigate,
-								type, and trigger actions without touching the keyboard.
-							</p>
-						</div>
-						<div
-							class="carousel-dots"
-							role="tablist"
-							aria-label="Carousel slides"
-							data-carousel-dots
-						>
-							<button
-								class="carousel-dot is-active"
-								type="button"
-								data-carousel-dot="0"
-								aria-current="true"
-								aria-label="Show slide 1"
-							></button>
-							<button
-								class="carousel-dot"
-								type="button"
-								data-carousel-dot="1"
-								aria-label="Show slide 2"
-							></button>
-							<button
-								class="carousel-dot"
-								type="button"
-								data-carousel-dot="2"
-								aria-label="Show slide 3"
-							></button>
+<section class="carousel-section" id="feature-carousel" aria-label="Image carousel">
+				<div class="carousel-container">
+					<div class="carousel-viewport">
+						<div class="carousel-track" data-carousel-track>
+							<img class="carousel-slide" src="Assets/HeroBanner.png" alt="ConType controller-focused hero banner" data-carousel-slide />
+							<img class="carousel-slide" src="Assets/Keyboard.png" alt="ConType virtual keyboard screen" data-carousel-slide />
+							<img class="carousel-slide" src="Assets/Settings.png" alt="ConType settings screen" data-carousel-slide />
 						</div>
 					</div>
-					<button
-						class="carousel-nav carousel-nav-next"
-						type="button"
-						data-carousel-nav="next"
-					>
-						<span class="sr-only">Next slide</span>
-					</button>
+					<div class="carousel-info">
+						<p class="carousel-caption" data-carousel-caption>Control your Mac from a controller.</p>
+						<div class="carousel-controls">
+							<button class="carousel-btn carousel-btn-prev" type="button" aria-label="Previous slide" data-carousel-prev>‹</button>
+							<div class="carousel-indicators" role="tablist" aria-label="Carousel slides">
+								<button class="carousel-dot is-active" type="button" data-carousel-dot="0" role="tab" aria-selected="true" aria-label="Go to slide 1"></button>
+								<button class="carousel-dot" type="button" data-carousel-dot="1" role="tab" aria-selected="false" aria-label="Go to slide 2"></button>
+								<button class="carousel-dot" type="button" data-carousel-dot="2" role="tab" aria-selected="false" aria-label="Go to slide 3"></button>
+							</div>
+							<button class="carousel-btn carousel-btn-next" type="button" aria-label="Next slide" data-carousel-next>›</button>
+						</div>
+						<p class="carousel-credit" data-carousel-credit>ConType</p>
+					</div>
+				</div>
 				</section>
 
 				<script src="script.js" defer></script>
