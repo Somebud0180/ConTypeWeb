@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const slideData = [
 		{
-			caption: "Control your Mac from a controller.",
-			credit: "Hero Banner",
+			caption: "Make your controller feel like it was made for typing.",
+			credit: "",
 		},
 		{
 			caption: "Virtual keyboard designed for your controller.",
