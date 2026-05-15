@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const slideData = [
 		{
-			caption: "Make your controller feel like it was made for typing.",
+			captionHtml:
+				"<strong>Keyboard Shortcuts.</strong> Make your controller feel like it was made for typing.",
 			credit: "",
 		},
 		{
@@ -39,7 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 
 		// Update caption and credit
-		captionEl.textContent = slideData[currentSlide].caption;
+		captionEl.innerHTML =
+			slideData[currentSlide].captionHtml ?? slideData[currentSlide].caption;
 		creditEl.textContent = slideData[currentSlide].credit;
 	};
 

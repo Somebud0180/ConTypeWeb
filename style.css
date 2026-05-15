@@ -98,6 +98,7 @@ a {
 }
 
 .hero {
+	position: relative;
 	height: clamp(360px, 62.5vw, 80vh);
 	min-height: 360px;
 	min-width: 0;
@@ -111,6 +112,30 @@ a {
 	overflow: hidden;
 	box-shadow: var(--shadow);
 	margin: -20px -20px 0 -20px;
+}
+
+.hero-credit-link {
+	position: absolute;
+	right: 18px;
+	bottom: 16px;
+	z-index: 2;
+	display: inline-flex;
+	align-items: center;
+	padding: 8px 12px;
+	border-radius: 999px;
+	background: rgba(17, 18, 24, 0.6);
+	backdrop-filter: blur(10px);
+	color: var(--hero-text);
+	font-size: 0.82rem;
+	font-weight: 400;
+	letter-spacing: 0.01em;
+	text-decoration: none;
+	transition: background-color 0.18s ease;
+}
+
+.hero-credit-link:hover,
+.hero-credit-link:focus-visible {
+	background: rgba(17, 18, 24, 0.8);
 }
 
 .hero-inner {
@@ -356,6 +381,11 @@ a {
 	font-size: 0.95rem;
 	color: var(--text-secondary);
 	font-weight: 500;
+}
+
+.carousel-caption strong {
+	font-weight: 700;
+	color: var(--text-primary);
 }
 
 .carousel-controls {
