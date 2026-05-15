@@ -344,6 +344,13 @@ a {
 	gap: 12px;
 }
 
+.carousel-meta {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+}
+
 .carousel-caption {
 	margin: 0;
 	font-size: 0.95rem;
