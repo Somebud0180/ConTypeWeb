@@ -241,7 +241,7 @@ a {
 .pill-button.secondary {
 	color: var(--pill-bg);
 	border-color: var(--pill-bg);
-	background: rgba(255, 255, 255, 0.04);
+	background: var(--pill-text);
 	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.11);
 }
 
