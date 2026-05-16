@@ -1,4 +1,76 @@
 document.addEventListener("DOMContentLoaded", () => {
+	const heroSlides = [
+		{
+			image: "Assets/BannerRoblox.png",
+			creditText: "Microwave Dinner by 1EpikDuck on Roblox",
+			creditUrl: "https://www.roblox.com/games/4344891683/",
+		},
+		{
+			image: "Assets/BannerPrism.png",
+			creditText: "Prism Launcher",
+			creditUrl: "https://prismlauncher.org/",
+		},
+	];
+
+	const heroEl = document.querySelector(".hero");
+	const heroCreditEl = document.querySelector(".hero-credit-link");
+
+	if (heroEl && heroCreditEl && heroSlides.length > 0) {
+		let currentHeroSlide = 0;
+		let isHeroFading = false;
+
+		const fadeDurationMs = 900;
+
+		const applyHeroCredit = (slide) => {
+			heroCreditEl.href = slide.creditUrl;
+			heroCreditEl.textContent = slide.creditText;
+			heroCreditEl.setAttribute(
+				"aria-label",
+				`Image credit: ${slide.creditText}`,
+			);
+		};
+
+		const setInitialHero = (index) => {
+			currentHeroSlide = (index + heroSlides.length) % heroSlides.length;
+			const current = heroSlides[currentHeroSlide];
+			heroEl.style.setProperty(
+				"--hero-image-current",
+				`url("${current.image}")`,
+			);
+			heroEl.style.setProperty("--hero-image-next", `url("${current.image}")`);
+			applyHeroCredit(current);
+		};
+
+		const updateHero = (index) => {
+			if (isHeroFading) return;
+
+			const nextHeroSlide = (index + heroSlides.length) % heroSlides.length;
+			if (nextHeroSlide === currentHeroSlide) return;
+
+			const next = heroSlides[nextHeroSlide];
+			isHeroFading = true;
+
+			heroEl.style.setProperty("--hero-image-next", `url("${next.image}")`);
+			heroEl.classList.add("is-fading");
+			applyHeroCredit(next);
+
+			window.setTimeout(() => {
+				heroEl.style.setProperty(
+					"--hero-image-current",
+					`url("${next.image}")`,
+				);
+				heroEl.classList.remove("is-fading");
+				currentHeroSlide = nextHeroSlide;
+				isHeroFading = false;
+			}, fadeDurationMs);
+		};
+
+		setInitialHero(0);
+		setInterval(() => {
+			updateHero(currentHeroSlide + 1);
+		}, 5000);
+	}
+
 	const slideData = [
 		{
 			captionHtml:

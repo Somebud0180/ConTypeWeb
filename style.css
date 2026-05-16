@@ -19,6 +19,8 @@
 	--page-max: 1280px;
 	--split-overlap: 72px;
 	--carousel-surface: rgba(255, 255, 255, 0.84);
+	--hero-image-current: url("Assets/BannerRoblox.png");
+	--hero-image-next: url("Assets/BannerRoblox.png");
 }
 
 * {
@@ -102,23 +104,47 @@ a {
 	height: clamp(360px, 62.5vw, 80vh);
 	min-height: 360px;
 	min-width: 0;
-	background-image:
-		url(Assets/HeroBanner.png),
-		linear-gradient(180deg, var(--theme-primary) 0%, var(--theme-tertiary) 72%);
-	background-size: cover;
-	background-position: center top;
-	background-repeat: no-repeat;
 	color: var(--hero-text);
 	overflow: hidden;
 	box-shadow: var(--shadow);
 	margin: -20px -20px 0 -20px;
 }
 
+.hero::before,
+.hero::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+	pointer-events: none;
+}
+
+.hero::before {
+	background-image:
+		var(--hero-image-current),
+		linear-gradient(180deg, var(--theme-primary) 0%, var(--theme-tertiary) 72%);
+	opacity: 1;
+}
+
+.hero::after {
+	background-image:
+		var(--hero-image-next),
+		linear-gradient(180deg, var(--theme-primary) 0%, var(--theme-tertiary) 72%);
+	opacity: 0;
+	transition: opacity 0.9s ease;
+}
+
+.hero.is-fading::after {
+	opacity: 1;
+}
+
 .hero-credit-link {
 	position: absolute;
 	right: 18px;
 	bottom: 16px;
-	z-index: 2;
+	z-index: 3;
 	display: inline-flex;
 	align-items: center;
 	padding: 8px 12px;
@@ -126,7 +152,7 @@ a {
 	background: rgba(17, 18, 24, 0.6);
 	backdrop-filter: blur(10px);
 	color: var(--hero-text);
-	font-size: 0.82rem;
+	font-size: 0.65rem;
 	font-weight: 400;
 	letter-spacing: 0.01em;
 	text-decoration: none;
@@ -139,12 +165,20 @@ a {
 }
 
 .hero-inner {
+	position: relative;
+	z-index: 2;
 	min-height: 100%;
 	display: grid;
 	align-items: start;
 	justify-items: center;
 	padding: 96px 28px 56px;
 	text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.hero::after {
+		transition: none;
+	}
 }
 
 .hero-content {
