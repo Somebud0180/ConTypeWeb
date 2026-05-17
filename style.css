@@ -270,10 +270,15 @@ a {
 
 .split-section {
 	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
+	grid-template-rows: repeat(1, minmax(0, 1fr));
 	row-gap: 6rem;
 	column-gap: 24px;
 	margin: 6rem 0;
+}
+
+.split-group {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .split-panel {
@@ -539,7 +544,12 @@ a {
 	}
 
 	.split-section {
+		row-gap: 4rem;
+	}
+
+	.split-group {
 		grid-template-columns: 1fr;
+		row-gap: 0;
 	}
 
 	.split-panel {
@@ -549,11 +559,6 @@ a {
 	.split-copy {
 		margin-left: 0;
 		margin-right: 0;
-		padding: 22px;
-	}
-
-	.split-section > .split-copy:nth-child(2),
-	.split-section > .split-copy:nth-child(3) {
 		padding: 22px;
 	}
 
