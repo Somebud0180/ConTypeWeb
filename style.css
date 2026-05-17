@@ -515,6 +515,21 @@ a {
 	font-size: 0.9rem;
 }
 
+.footer-split {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px 24px;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.footer-stack {
+	display: flex;
+	flex-direction: column;
+	margin-top: 2px;
+	gap: 2px;
+}
+
 .footer p {
 	margin: 8px 0 0 0;
 }
@@ -528,6 +543,15 @@ a {
 .footer-credit-link {
 	color: var(--text-secondary);
 	font-weight: 500;
+}
+
+.footer-signature {
+	height: 64px;
+}
+
+/* Vertically center the signature column only */
+.footer-split > div:last-child {
+	align-self: center;
 }
 
 @media (max-width: 860px) {
