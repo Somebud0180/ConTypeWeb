@@ -1,24 +1,24 @@
 :root {
 	color-scheme: light;
-	--page-bg: #f5f5f7;
+	--page-bg: #f2e8f2;
 	--text-primary: #111111;
 	--text-secondary: #5f5f67;
-	--surface: rgba(255, 255, 255, 0.8);
+	--surface: rgba(242, 232, 242, 0.7);
 	--surface-border: rgba(17, 17, 17, 0.08);
 	--theme-primary: #9074cd;
 	--theme-secondary: #f2e8f2;
 	--theme-tertiary: #4f2f50;
-	--hero-text: #f5f5f7;
-	--hero-muted: rgba(245, 245, 247, 0.76);
+	--hero-text: #f2e8f2;
+	--hero-muted: #f2e8f2d9;
 	--pill-bg: #8965d7;
-	--pill-text: #f5f5f7;
+	--pill-text: #f2e8f2;
 	--pill-border: rgba(17, 17, 17, 0.1);
 	--shadow: 0 24px 60px rgba(17, 17, 17, 0.12);
 	--radius-xl: 32px;
 	--radius-pill: 999px;
 	--page-max: 1280px;
 	--split-overlap: 72px;
-	--carousel-surface: rgba(255, 255, 255, 0.84);
+	--carousel-surface: rgba(255, 255, 255, 0.9);
 	--hero-image-current: url("Assets/BannerRoblox.png");
 	--hero-image-next: url("Assets/BannerRoblox.png");
 }
@@ -116,7 +116,7 @@ a {
 	position: absolute;
 	inset: 0;
 	background-size: cover;
-	background-position: center top;
+	background-position: center center;
 	background-repeat: no-repeat;
 	pointer-events: none;
 }
@@ -188,19 +188,42 @@ a {
 	gap: 22px;
 }
 
+.hero-side {
+	display: flex;
+	align-items: center;
+	gap: 22px;
+}
+
+.hero-icon {
+	width: 96px;
+	height: 96px;
+	border-radius: 24px;
+	box-shadow: var(--shadow);
+	object-fit: cover;
+	object-position: center;
+}
+
 .hero-title {
 	margin: 0;
+	color: var(--theme-secondary);
 	font-size: clamp(3rem, 6vw, 7rem);
 	line-height: 0.95;
 	font-weight: 700;
+	text-shadow: #11111130 0 2px 4px;
 }
 
 .hero-subtitle {
 	margin: 0;
 	max-width: 48ch;
-	color: var(--hero-muted);
+	color: var(--theme-tertiary);
 	font-size: clamp(1rem, 2vw, 1.15rem);
 	line-height: 1.55;
+	border: 1px solid var(--surface-border);
+	border-radius: var(--radius-pill);
+	background: var(--surface);
+	backdrop-filter: blur(18px);
+	box-shadow: var(--shadow);
+	padding: 1px 12px;
 }
 
 .hero-actions {
@@ -242,7 +265,7 @@ a {
 	color: var(--pill-bg);
 	border-color: var(--pill-bg);
 	background: var(--pill-text);
-	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.11);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
 }
 
 .split-section {
@@ -257,7 +280,6 @@ a {
 	min-height: 320px;
 	padding: 28px;
 	border-radius: var(--radius-xl);
-	border: 1px solid var(--surface-border);
 	background: rgba(255, 255, 255, 0.72);
 	backdrop-filter: blur(16px);
 	box-shadow: var(--shadow);
@@ -294,6 +316,8 @@ a {
 	isolation: isolate;
 	display: grid;
 	align-content: center;
+	align-self: stretch;
+	height: 100%;
 	gap: 16px;
 	background: transparent;
 	padding: 28px;
@@ -363,7 +387,7 @@ a {
 .carousel-container {
 	display: grid;
 	gap: 20px;
-	background: rgba(231, 231, 231, 0.9);
+	background: var(--carousel-surface);
 	padding: 20px;
 	border-radius: 24px;
 }
@@ -431,23 +455,26 @@ a {
 
 .carousel-btn {
 	padding: 0;
-	background: var(--pill-text);
-	border: none;
-	border-radius: 50%;
 	cursor: pointer;
 	font-size: 1.2rem;
+	font-weight: 700;
 	color: var(--pill-bg);
-	transition: all 0.2s ease;
+	transition: all 0.1s ease-out;
 	width: 40px;
 	height: 40px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-shrink: 0;
+	background: rgba(255, 255, 255, 0.9);
+	border: 1px solid rgba(17, 17, 17, 0.08);
+	border-radius: 50%;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .carousel-btn:hover {
-	background: #fff;
+	background: var(--theme-secondary);
+	font-size: 1rem;
 	opacity: 0.9;
 }
 
@@ -470,11 +497,12 @@ a {
 	border: none;
 	border-radius: 50%;
 	cursor: pointer;
-	transition: all 0.2s ease;
+	transition: all 0.2s ease-out;
 }
 
 .carousel-dot:hover {
 	background: rgba(17, 17, 17, 0.3);
+	scale: 0.95;
 }
 
 .carousel-dot.is-active {

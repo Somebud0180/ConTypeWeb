@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const heroSlides = [
 		{
 			image: "Assets/BannerRoblox.png",
-			creditText: "Microwave Dinner by 1EpikDuck on Roblox",
+			creditText: "Roblox: Microwave Dinner by 1EpikDuck",
 			creditUrl: "https://www.roblox.com/games/4344891683/",
 		},
 		{
@@ -78,8 +78,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			credit: "",
 		},
 		{
-			caption: "Virtual keyboard designed for your controller.",
-			credit: "Keyboard Interface",
+			caption: "Use your controller to move the mouse cursor. Click with ease.",
+			credit: "",
 		},
 		{
 			caption: "Customize every aspect of your experience.",
