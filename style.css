@@ -271,18 +271,19 @@ a {
 .split-section {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 24px;
-	margin-top: 28px;
+	row-gap: 6rem;
+	column-gap: 24px;
+	margin: 6rem 0;
 }
 
 .split-panel {
 	position: relative;
 	min-height: 320px;
 	padding: 28px;
-	border-radius: var(--radius-xl);
+	/* border-radius: var(--radius-xl);
 	background: rgba(255, 255, 255, 0.72);
 	backdrop-filter: blur(16px);
-	box-shadow: var(--shadow);
+	box-shadow: var(--shadow); */
 }
 
 .split-media {
@@ -290,6 +291,7 @@ a {
 	place-items: center;
 	background: linear-gradient(150deg, #9074cd, #4f2f50);
 	color: rgba(255, 255, 255, 0.76);
+	border-radius: var(--radius-xl);
 }
 
 .media-placeholder {
@@ -327,11 +329,11 @@ a {
 	content: "";
 	position: absolute;
 	inset: 0;
-	border: 1px solid var(--surface-border);
+	/* border: 1px solid var(--surface-border);
 	border-radius: inherit;
 	background: rgba(255, 255, 255, 0.72);
 	backdrop-filter: blur(16px);
-	box-shadow: var(--shadow);
+	box-shadow: var(--shadow); */
 	z-index: -1;
 }
 
