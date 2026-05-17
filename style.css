@@ -103,7 +103,7 @@ a {
 	position: relative;
 	height: clamp(360px, 62.5vw, 80vh);
 	min-height: 360px;
-	min-width: 0;
+	min-width: clamp(320px, 100vw, 1280px);
 	color: var(--hero-text);
 	overflow: hidden;
 	box-shadow: var(--shadow);
