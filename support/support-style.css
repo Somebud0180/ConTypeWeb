@@ -56,7 +56,21 @@
 }
 
 .support-icon {
-	height: 32px;
+	width: 52px;
+	height: 52px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 8px;
+	background-color: #f2e8f2;
+	border: 2px solid #9074cd;
+	border-radius: 12px;
+}
+
+.support-icon img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
 
 .stack {
