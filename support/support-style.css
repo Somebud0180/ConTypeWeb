@@ -1,0 +1,70 @@
+.page-shell main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.navbar-padding {
+	margin-top: 60px;
+}
+
+.carousel-container {
+	padding: 24px;
+	max-width: 960px;
+	align-items: center;
+}
+
+.hero-icon {
+	width: 72px;
+	height: 72px;
+	border-radius: 18px;
+}
+
+.hero-title {
+	font-size: 1.5rem;
+	font-weight: 400;
+	color: black;
+	text-shadow: none;
+}
+
+.hero-content {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	gap: 4px;
+}
+
+.hero-content h1 {
+	margin: 0;
+}
+
+.support-desc {
+	font-size: 1.2rem;
+	font-weight: 400;
+	text-indent: 1rem;
+	text-align: justify;
+	max-width: 600px;
+	padding: 0 16px;
+}
+
+.support-row {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin-top: 24px;
+}
+
+.support-icon {
+	height: 32px;
+}
+
+.stack {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.stack * {
+	margin: 0;
+}
