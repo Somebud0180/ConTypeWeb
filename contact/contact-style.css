@@ -127,3 +127,7 @@
 .stack * {
 	margin: 0;
 }
+
+.stack a {
+	color: #9074cd;
+}
