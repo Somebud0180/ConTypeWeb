@@ -39,7 +39,7 @@
 	margin: 0;
 }
 
-.support-desc {
+.contact-desc {
 	font-size: 1.2rem;
 	font-weight: 400;
 	text-indent: 1rem;
@@ -48,14 +48,53 @@
 	padding: 0 16px;
 }
 
-.support-row {
+.contact-desc a {
+	font-size: 1.2rem;
+	font-weight: 500;
+	letter-spacing: 0.9;
+	color: #9074cd;
+	text-decoration: underline;
+}
+
+.profile-group {
+	width: 192px;
+	height: 192px;
+	position: relative;
+	cursor: pointer;
+	user-select: none;
+}
+
+.profile-pic {
+	width: 192px;
+	height: 192px;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.profile-pic.active {
+	opacity: 1;
+}
+
+.profile-pic.circle {
+	border-radius: 50%;
+}
+
+.profile-pic.square {
+	border-radius: 2rem;
+}
+
+.contact-row {
 	display: flex;
 	align-items: center;
 	gap: 16px;
 	margin-top: 24px;
 }
 
-.support-icon {
+.contact-icon {
 	width: 52px;
 	height: 52px;
 	display: flex;
@@ -67,10 +106,16 @@
 	border-radius: 12px;
 }
 
-.support-icon img {
+.contact-icon img {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
+}
+
+.hstack {
+	display: flex;
+	flex-direction: row;
+	gap: 4px;
 }
 
 .stack {

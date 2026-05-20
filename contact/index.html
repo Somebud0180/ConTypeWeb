@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ConType - Contact</title>
+		<link rel="stylesheet" href="../style.css" />
+		<link rel="stylesheet" href="./contact-style.css" />
+	</head>
+	<body>
+		<div class="page-shell">
+			<header class="topbar">
+				<a class="brand" href="../index.html">ConType</a>
+				<nav class="topnav" aria-label="Primary">
+					<a href="../index.html#features">Features</a>
+					<a href="../privacy-policy/">Privacy Policy</a>
+					<a href="#">Contact</a>
+				</nav>
+			</header>
+
+			<main>
+				<section class="carousel-container navbar-padding" id="contact">
+					<div class="hero-side">
+						<img
+							src="../Assets/IconLight.png"
+							alt="ConType Icon"
+							class="hero-icon"
+						/>
+						<div class="hero-content">
+							<h1 class="hero-title" id="hero-title">ConType</h1>
+							<h1>Contact</h1>
+						</div>
+					</div>
+
+					<div class="hstack">
+						<div class="profile-group" id="profileGroup">
+							<img
+								src="../Assets/Profile1.png"
+								alt="A drawing of exitOne (my character)"
+								class="profile-pic circle active"
+							/>
+							<img
+								src="../Assets/Profile2.png"
+								alt="A picture of with other Hack Clubbers in an elevator"
+								class="profile-pic square"
+							/>
+							<img
+								src="../Assets/Profile3.png"
+								alt="A drawing of Froot (my character)"
+								class="profile-pic circle"
+							/>
+							<img
+								src="../Assets/Profile4.png"
+								alt="A picture of me holding a Blåhaj in a Beach"
+								class="profile-pic square"
+							/>
+						</div>
+						<div>
+							<p class="contact-desc">
+								Hi! I'm Somebud (humansona: Ethan), the creator of ConType. I'd
+								be happy to help with questions or suggestions about the app.
+								You can reach me through the following channels.
+							</p>
+							<p class="contact-desc">
+								I make apps for utility and fun as a part of
+								<a
+									href="https://hackclub.com/"
+									target="_blank"
+									rel="noopener noreferrer"
+									>Hack Club</a
+								>. If you're also a high schooler interested in coding, you
+								should consider joining too!
+							</p>
+						</div>
+					</div>
+
+					<div class="contact-row">
+						<div class="contact-icon">
+							<img src="../Assets/Mail.png" alt="Email" />
+						</div>
+						<div class="stack">
+							<h2>Email</h2>
+							<a href="mailto:ethanlagera@icloud.com">ethanlagera@icloud.com</a>
+						</div>
+					</div>
+				</section>
+			</main>
+
+			<footer class="footer">
+				<div class="footer-split">
+					<div>
+						<p class="footer-heading">ConType</p>
+						<a
+							href="https://hackclub.com/"
+							class="footer-credit-link"
+							aria-label="Hack Club link"
+						>
+							Made with ♥, Hack Club
+						</a>
+						<p>&copy; 2026 Ethan John</p>
+					</div>
+					<div>
+						<p class="footer-heading">Links</p>
+						<div class="footer-stack">
+							<a href="#features">Features</a>
+							<a href="./privacy-policy/">Privacy Policy</a>
+							<a href="./contact/">Contact</a>
+						</div>
+					</div>
+					<div>
+						<img src="../Assets/signature.png" />
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<script>
+			let currentProfileIndex = 0;
+			const profileGroup = document.getElementById("profileGroup");
+			const profileImages = profileGroup.querySelectorAll(".profile-pic");
+			const totalProfiles = profileImages.length;
+			let canTrigger = true;
+			const DEBOUNCE_MS = 1000; // 1 second
+
+			function showNextProfile() {
+				profileImages.forEach((img) => img.classList.remove("active"));
+				currentProfileIndex = (currentProfileIndex + 1) % totalProfiles;
+				profileImages[currentProfileIndex].classList.add("active");
+			}
+
+			function triggerNext() {
+				if (!canTrigger) return;
+				canTrigger = false;
+				showNextProfile();
+				setTimeout(() => {
+					canTrigger = true;
+				}, DEBOUNCE_MS);
+			}
+
+			// Handle hover
+			profileGroup.addEventListener("mouseenter", () => {
+				triggerNext();
+			});
+
+			// Handle click
+			profileGroup.addEventListener("click", () => {
+				canTrigger = true;
+				triggerNext();
+			});
+
+			// Handle touch/tap
+			profileGroup.addEventListener("touchstart", (e) => {
+				canTrigger = true;
+				e.preventDefault();
+				triggerNext();
+			});
+		</script>
+	</body>
+</html>
