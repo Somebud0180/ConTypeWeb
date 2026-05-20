@@ -82,8 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
 			credit: "",
 		},
 		{
-			caption: "Customize every aspect of your experience.",
-			credit: "Settings Panel",
+			caption:
+				"Feel the keyboard as you navigate with controller vibrations with every move.",
+			credit: "",
 		},
 	];
 
