@@ -594,10 +594,6 @@ a {
 		padding: 22px;
 	}
 
-	.hero-inner {
-		padding: 56px 22px 44px;
-	}
-
 	.carousel-stage {
 		height: clamp(260px, 46svh, 520px);
 		padding: 14px 10px;

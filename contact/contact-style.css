@@ -131,3 +131,11 @@
 .stack a {
 	color: #9074cd;
 }
+
+@media (max-width: 860px) {
+	.hstack {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+}
