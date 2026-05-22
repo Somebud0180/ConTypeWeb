@@ -1,19 +1,31 @@
 :root {
 	color-scheme: light;
-	--page-bg: #f2e8f2;
+	--page-bg-start: #f7eff8;
+	--page-bg-mid: #f2e8f2;
+	--page-bg-end: #ececf5;
 	--text-primary: #111111;
 	--text-secondary: #5f5f67;
-	--surface: rgba(242, 232, 242, 0.7);
+	--surface: rgba(255, 255, 255, 0.68);
 	--surface-border: rgba(17, 17, 17, 0.08);
 	--theme-primary: #9074cd;
 	--theme-secondary: #f2e8f2;
 	--theme-tertiary: #4f2f50;
 	--hero-text: #f2e8f2;
 	--hero-muted: #f2e8f2d9;
-	--pill-bg: #8965d7;
+	--pill-bg: #9074cd;
 	--pill-text: #f2e8f2;
 	--pill-border: rgba(17, 17, 17, 0.1);
 	--shadow: 0 24px 60px rgba(17, 17, 17, 0.12);
+	--control-bg: rgba(255, 255, 255, 0.9);
+	--control-bg-hover: rgba(242, 232, 242, 0.98);
+	--control-text: var(--pill-bg);
+	--control-border: rgba(17, 17, 17, 0.08);
+	--control-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	--picker-surface: rgba(20, 18, 28, 0.65);
+	--picker-border: rgba(255, 255, 255, 0.12);
+	--picker-text: #f2e8f2;
+	--picker-active-bg: #9074cd;
+	--picker-active-text: rgba(20, 18, 28, 0.65);
 	--radius-xl: 32px;
 	--radius-pill: 999px;
 	--page-max: 1280px;
@@ -22,6 +34,64 @@
 	--carousel-surface: rgba(255, 255, 255, 0.9);
 	--hero-image-current: url("Assets/BannerRoblox.png");
 	--hero-image-next: url("Assets/BannerRoblox.png");
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme]) {
+		color-scheme: dark;
+		--page-bg-start: #100d13;
+		--page-bg-mid: #1d102a;
+		--page-bg-end: #100714;
+		--text-primary: #eef2ff;
+		--text-secondary: #a5adc5;
+		--surface: rgba(17, 23, 38, 0.72);
+		--surface-border: rgba(255, 255, 255, 0.08);
+		--theme-primary: #9074cd;
+		--theme-secondary: #f2e8f2;
+		--theme-tertiary: #4f2f50;
+		--hero-text: #f4f6ff;
+		--hero-muted: rgba(244, 246, 255, 0.84);
+		--pill-bg: #9074cd;
+		--pill-text: #0b1324;
+		--pill-border: rgba(255, 255, 255, 0.12);
+		--shadow: 0 26px 64px rgba(0, 0, 0, 0.32);
+		--control-bg: rgba(18, 24, 40, 0.9);
+		--control-bg-hover: rgba(28, 37, 61, 0.96);
+		--control-text: var(--pill-bg);
+		--control-border: rgba(255, 255, 255, 0.08);
+		--control-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
+		--carousel-surface: rgba(37, 37, 37, 0.9);
+	}
+}
+
+html[data-theme="dark"] {
+	color-scheme: dark;
+	--page-bg-start: #100d13;
+	--page-bg-mid: #1d102a;
+	--page-bg-end: #100714;
+	--text-primary: #eef2ff;
+	--text-secondary: #a5adc5;
+	--surface: rgba(17, 23, 38, 0.72);
+	--surface-border: rgba(255, 255, 255, 0.08);
+	--theme-primary: #9074cd;
+	--theme-secondary: #f2e8f2;
+	--theme-tertiary: #4f2f50;
+	--hero-text: #f4f6ff;
+	--hero-muted: rgba(244, 246, 255, 0.84);
+	--pill-bg: #9074cd;
+	--pill-text: #0b1324;
+	--pill-border: rgba(255, 255, 255, 0.12);
+	--shadow: 0 26px 64px rgba(0, 0, 0, 0.32);
+	--control-bg: rgba(18, 24, 40, 0.9);
+	--control-bg-hover: rgba(28, 37, 61, 0.96);
+	--control-text: var(--pill-bg);
+	--control-border: rgba(255, 255, 255, 0.08);
+	--control-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
+	--carousel-surface: rgba(37, 37, 37, 0.9);
+}
+
+html[data-theme="light"] {
+	color-scheme: light;
 }
 
 * {
@@ -37,9 +107,9 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 	background: radial-gradient(
 		circle at top,
-		rgba(255, 255, 255, 0.92),
-		rgba(245, 245, 247, 0.98) 42%,
-		rgba(235, 235, 240, 1) 100%
+		var(--page-bg-start),
+		var(--page-bg-mid) 42%,
+		var(--page-bg-end) 100%
 	);
 	color: var(--text-primary);
 	min-height: 100vh;
@@ -54,7 +124,7 @@ a {
 	width: min(100%, var(--page-max));
 	min-height: 100vh;
 	margin: 0 auto;
-	padding: var(--page-gutter) var(--page-gutter) 0;
+	padding: var(--page-gutter) var(--page-gutter) 12px;
 	display: flex;
 	flex-direction: column;
 }
@@ -217,7 +287,7 @@ a {
 	font-size: clamp(3rem, 6vw, 7rem);
 	line-height: 0.95;
 	font-weight: 700;
-	text-shadow: #11111130 0 2px 4px;
+	text-shadow: rgba(0, 0, 0, 0.28) 0 2px 4px;
 }
 
 .hero-subtitle {
@@ -302,7 +372,11 @@ a {
 .split-media {
 	display: grid;
 	place-items: center;
-	background: linear-gradient(150deg, #9074cd, #4f2f50);
+	background: linear-gradient(
+		150deg,
+		var(--theme-primary),
+		var(--theme-tertiary)
+	);
 	color: rgba(255, 255, 255, 0.76);
 	max-width: clamp(60vw, 100%, 100vw);
 	border-radius: var(--radius-xl);
@@ -450,7 +524,7 @@ a {
 	cursor: pointer;
 	font-size: 1.2rem;
 	font-weight: 700;
-	color: var(--pill-bg);
+	color: var(--control-text);
 	transition: all 0.1s ease-out;
 	width: 40px;
 	height: 40px;
@@ -458,14 +532,14 @@ a {
 	align-items: center;
 	justify-content: center;
 	flex-shrink: 0;
-	background: rgba(255, 255, 255, 0.9);
-	border: 1px solid rgba(17, 17, 17, 0.08);
+	background: var(--control-bg);
+	border: 1px solid var(--control-border);
 	border-radius: 50%;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	box-shadow: var(--control-shadow);
 }
 
 .carousel-btn:hover {
-	background: var(--theme-secondary);
+	background: var(--control-bg-hover);
 	font-size: 1rem;
 	opacity: 0.9;
 }
@@ -475,17 +549,17 @@ a {
 	align-items: center;
 	gap: 8px;
 	padding: 14px 18px;
-	background: rgba(255, 255, 255, 0.9);
-	border: 1px solid rgba(17, 17, 17, 0.08);
+	background: var(--control-bg);
+	border: 1px solid var(--control-border);
 	border-radius: 999px;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	box-shadow: var(--control-shadow);
 }
 
 .carousel-dot {
 	width: 12px;
 	height: 12px;
 	padding: 0;
-	background: rgba(17, 17, 17, 0.2);
+	background: color-mix(in srgb, var(--control-text) 20%, transparent);
 	border: none;
 	border-radius: 50%;
 	cursor: pointer;
@@ -493,7 +567,7 @@ a {
 }
 
 .carousel-dot:hover {
-	background: rgba(17, 17, 17, 0.3);
+	background: color-mix(in srgb, var(--control-text) 32%, transparent);
 	scale: 0.95;
 }
 
@@ -562,6 +636,12 @@ a {
 	font-weight: 600;
 }
 
+/* Auxiliary pages (contact / privacy) should use primary text for hero title */
+.aux-page .hero-title {
+	color: var(--text-primary) !important;
+	text-shadow: none;
+}
+
 .footer-credit-link {
 	color: var(--text-secondary);
 	font-weight: 500;
@@ -569,6 +649,50 @@ a {
 
 .footer-signature {
 	height: 64px;
+}
+
+.theme-picker {
+	position: static;
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 6px;
+	margin-top: 8px;
+	border-radius: 999px;
+	background: var(--picker-surface);
+	border: 1px solid var(--picker-border);
+	backdrop-filter: blur(8px);
+	box-shadow: none;
+	color: var(--picker-text);
+}
+
+.theme-picker button {
+	min-width: 52px;
+	padding: 4px 6px;
+	border: 0;
+	border-radius: 999px;
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	font-size: 0.8rem;
+	font-weight: 400;
+	cursor: pointer;
+	transition:
+		background-color 0.18s ease,
+		color 0.18s ease,
+		transform 0.18s ease;
+}
+
+.theme-picker button:hover,
+.theme-picker button:focus-visible {
+	transform: translateY(-1px);
+	outline: none;
+	background: rgba(255, 255, 255, 0.08);
+}
+
+.theme-picker button.is-active {
+	background: var(--picker-active-bg);
+	color: var(--picker-active-text);
 }
 
 /* Vertically center the signature column only */
@@ -582,7 +706,7 @@ a {
 	}
 
 	.page-shell {
-		padding: var(--page-gutter) var(--page-gutter) 44px;
+		padding: var(--page-gutter) var(--page-gutter) 24px;
 	}
 
 	.topnav {
@@ -636,12 +760,22 @@ a {
 		padding: 14px 16px;
 	}
 
+	.theme-picker {
+		gap: 4px;
+	}
+
 	.topnav {
 		gap: 10px 14px;
 	}
 
 	.pill-button {
 		width: 100%;
+	}
+
+	.theme-picker button {
+		min-width: 48px;
+		padding: 8px 10px;
+		font-size: 0.86rem;
 	}
 
 	.hero-actions {
