@@ -6,6 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
 			creditUrl: "https://www.roblox.com/games/4344891683/",
 		},
 		{
+			image: "Assets/BannerCider.png",
+			creditText: "Cider by Cider Collective",
+			creditUrl: "https://cider.sh/",
+		},
+		{
 			image: "Assets/BannerPrism.png",
 			creditText: "Prism Launcher",
 			creditUrl: "https://prismlauncher.org/",
@@ -76,15 +81,24 @@ document.addEventListener("DOMContentLoaded", () => {
 			captionHtml:
 				"<strong>Keyboard Shortcuts.</strong> Make your controller feel like it was made for typing.",
 			credit: "",
+			creditUrl: "",
+		},
+		{
+			captionHtml:
+				"<strong>Window Snapping.</strong> Move the keyboard anywhere, or snap it in the default position.",
+			credit: "Cider by Cider Collective",
+			creditUrl: "https://cider.sh/",
 		},
 		{
 			caption: "Use your controller to move the mouse cursor. Click with ease.",
 			credit: "",
+			creditUrl: "",
 		},
 		{
 			caption:
 				"Feel the keyboard as you navigate with controller vibrations with every move.",
 			credit: "",
+			creditUrl: "",
 		},
 	];
 
@@ -115,7 +129,19 @@ document.addEventListener("DOMContentLoaded", () => {
 		// Update caption and credit
 		captionEl.innerHTML =
 			slideData[currentSlide].captionHtml ?? slideData[currentSlide].caption;
-		creditEl.textContent = slideData[currentSlide].credit;
+		const { credit, creditUrl } = slideData[currentSlide];
+		creditEl.textContent = credit;
+		if (creditUrl) {
+			creditEl.href = creditUrl;
+			creditEl.target = "_blank";
+			creditEl.rel = "noreferrer noopener";
+			creditEl.setAttribute("aria-label", `Open credit link for ${credit}`);
+		} else {
+			creditEl.removeAttribute("href");
+			creditEl.removeAttribute("target");
+			creditEl.removeAttribute("rel");
+			creditEl.removeAttribute("aria-label");
+		}
 	};
 
 	dots.forEach((dot) => {
