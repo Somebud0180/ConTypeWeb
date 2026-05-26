@@ -140,6 +140,49 @@ document.addEventListener("DOMContentLoaded", () => {
 			setTimeout(() => scrollToWithOffset(target, "auto"), 0);
 		}
 	}
+
+	const topnav = document.querySelector("[data-topnav]");
+	const topbar = document.querySelector(".topbar");
+	const topnavToggle = topbar?.querySelector(".topnav-toggle");
+	const topnavLinks = topnav?.querySelector(".topnav-links");
+	const topnavMediaQuery = window.matchMedia("(max-width: 700px)");
+
+	if (topnav && topnavToggle && topnavLinks && topbar) {
+		const setTopnavOpen = (isOpen) => {
+			topnav.classList.toggle("is-open", isOpen);
+			topbar.classList.toggle("is-open", isOpen);
+			topbar.style.borderRadius = isOpen ? "28px" : "";
+			topbar.style.clipPath = isOpen
+				? "inset(0 round 28px)"
+				: "inset(0 round 999px)";
+			topnavToggle.setAttribute("aria-expanded", String(isOpen));
+		};
+
+		const closeTopnav = () => setTopnavOpen(false);
+
+		topnavToggle.addEventListener("click", () => {
+			setTopnavOpen(!topnav.classList.contains("is-open"));
+		});
+
+		topnavLinks.querySelectorAll("a").forEach((link) => {
+			link.addEventListener("click", () => {
+				closeTopnav();
+			});
+		});
+
+		document.addEventListener("click", (event) => {
+			if (!topbar.classList.contains("is-open")) return;
+			if (!topbar.contains(event.target)) {
+				closeTopnav();
+			}
+		});
+
+		topnavMediaQuery.addEventListener("change", () => {
+			if (!topnavMediaQuery.matches) {
+				closeTopnav();
+			}
+		});
+	}
 	const heroSlides = [
 		{
 			image: {

@@ -9,11 +9,29 @@
 	<body>
 		<div class="page-shell">
 			<header class="topbar">
-				<a class="brand" href="#">ConType</a>
-				<nav class="topnav" aria-label="Primary">
-					<a href="#features">Features</a>
-					<a href="./privacy-policy/">Privacy Policy</a>
-					<a href="./contact/">Contact</a>
+				<div class="topbar-head">
+					<a class="brand" href="#">ConType</a>
+					<button
+						type="button"
+						class="topnav-toggle"
+						aria-expanded="false"
+						aria-controls="primary-navigation"
+						aria-label="Toggle navigation"
+					>
+						<span></span>
+						<span></span>
+						<span></span>
+					</button>
+				</div>
+				<nav class="topnav" aria-label="Primary" data-topnav>
+					<div class="topnav-links" id="primary-navigation">
+						<a href="#features">Features</a>
+						<a href="https://github.com/Somebud0180/ConType/releases/latest"
+							>Download</a
+						>
+						<a href="./privacy-policy/">Privacy Policy</a>
+						<a href="./contact/">Contact</a>
+					</div>
 				</nav>
 			</header>
 
