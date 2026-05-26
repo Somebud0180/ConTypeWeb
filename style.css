@@ -962,7 +962,7 @@ a {
 	}
 
 	.pill-button {
-		width: 100%;
+		width: fit-content;
 	}
 
 	.theme-picker button {
