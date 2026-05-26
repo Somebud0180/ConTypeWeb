@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		},
 		{
 			captionHtml:
-				"<strong>Window Snapping.</strong> Move the keyboard anywhere, or snap it in the default position.",
+				"<strong>Window Snapping.</strong> Move the keyboard anywhere, or snap it to the centerline or the default position.",
 			credit: "Cider by Cider Collective",
 			creditUrl: "https://cider.sh/",
 		},
