@@ -937,7 +937,9 @@ a {
 		visibility: visible;
 		padding-top: 12px;
 		padding-bottom: 8px;
-		transition: opacity 0.3s ease 0.25s, visibility 0s linear 0.25s;
+		transition:
+			opacity 0.3s ease 0.25s,
+			visibility 0s linear 0.25s;
 	}
 
 	.topnav-links a {
