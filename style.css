@@ -156,7 +156,7 @@ a {
 .topbar-head {
 	display: flex;
 	align-items: center;
-	gap: 12px;
+	gap: 2rem;
 }
 
 .topbar-head .brand {
@@ -176,7 +176,6 @@ a {
 .topnav {
 	display: flex;
 	align-items: center;
-	justify-content: flex-end;
 	gap: 14px;
 }
 
@@ -875,46 +874,37 @@ a {
 
 	.topbar {
 		left: 50%;
-		transform: none;
-		width: min(calc(100% - 28px), 300px);
-		max-width: none;
-		padding: 14px 16px;
-		flex-wrap: nowrap;
-		gap: 10px;
-		align-items: center;
-		transition:
-			width 0.22s ease,
-			padding 0.22s ease,
-			gap 0.22s ease,
-			border-radius 0.22s ease,
-			clip-path 0.22s ease,
-			transform 0.22s ease;
-		clip-path: inset(0 round 999px);
-	}
-
-	.topbar {
 		transform: translateX(-50%);
+		width: calc(100% - 28px);
+		max-width: 200px;
+		padding: 14px 16px;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0;
+		border-radius: 28px;
+		transition:
+			max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+			padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+			gap 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+			box-shadow 0.4s ease;
 	}
 
 	.topbar.is-open {
-		flex-direction: column;
-		align-items: stretch;
-		width: min(calc(100% - 28px), 300px);
+		max-width: 300px;
 		gap: 8px;
-		padding: 12px 14px 14px;
-		border-radius: 28px !important;
-		clip-path: inset(0 round 28px);
 		overflow: hidden;
 	}
 
 	.topbar-head {
 		width: 100%;
+		justify-content: space-between;
 	}
 
 	.topnav {
-		width: auto;
-		justify-content: flex-end;
-		gap: 0;
+		width: 100%;
+		display: grid;
+		grid-template-rows: 0fr;
+		transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
 	.topnav-toggle {
@@ -925,29 +915,41 @@ a {
 	}
 
 	.topnav-links {
-		display: none;
+		overflow: hidden;
+		min-height: 0;
 		width: 100%;
-		padding-top: 40px;
+		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: flex-start;
-		gap: 2px;
-		text-align: center;
+		gap: 8px;
+		text-align: left;
+		opacity: 0;
+		transform: translateY(-8px);
+		transition:
+			opacity 0.2s ease,
+			transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+
+	.topbar.is-open .topnav {
+		grid-template-rows: 1fr;
 	}
 
 	.topbar.is-open .topnav-links {
-		display: flex;
+		opacity: 1;
+		transform: translateY(0);
+		padding-top: 12px;
+		padding-bottom: 8px;
 	}
 
 	.topnav-links a {
 		display: inline-flex;
 		align-items: center;
-		justify-content: center;
-		width: auto;
-		min-width: min(100%, 180px);
+		justify-content: flex-start;
+		width: 100%;
 		font-size: 0.92rem;
-		padding: 2px 0;
-		border-radius: 999px;
+		padding: 4px 8px;
+		border-radius: 8px;
 		background: transparent;
 	}
 

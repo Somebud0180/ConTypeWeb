@@ -151,10 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		const setTopnavOpen = (isOpen) => {
 			topnav.classList.toggle("is-open", isOpen);
 			topbar.classList.toggle("is-open", isOpen);
-			topbar.style.borderRadius = isOpen ? "28px" : "";
-			topbar.style.clipPath = isOpen
-				? "inset(0 round 28px)"
-				: "inset(0 round 999px)";
 			topnavToggle.setAttribute("aria-expanded", String(isOpen));
 		};
 
