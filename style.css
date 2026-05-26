@@ -151,12 +151,20 @@ a {
 	box-shadow: var(--shadow);
 	width: max-content;
 	max-width: calc(100% - 40px);
+	transition:
+		width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+		max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+		padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+		gap 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+		border-radius 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+		box-shadow 0.4s ease;
 }
 
 .topbar-head {
 	display: flex;
 	align-items: center;
 	gap: 2rem;
+	transition: gap 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .topbar-head .brand {
@@ -171,6 +179,7 @@ a {
 	font-size: 1rem;
 	font-weight: 600;
 	letter-spacing: -0.02em;
+	transition: font-size 0.4s ease;
 }
 
 .topnav {
@@ -185,6 +194,9 @@ a {
 	justify-content: flex-end;
 	gap: 14px;
 	min-width: 0;
+	transition:
+		opacity 0.4s ease,
+		gap 0.4s ease;
 }
 
 .topnav a {
@@ -882,11 +894,6 @@ a {
 		align-items: stretch;
 		gap: 0;
 		border-radius: 28px;
-		transition:
-			max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-			padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-			gap 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-			box-shadow 0.4s ease;
 	}
 
 	.topbar.is-open {
@@ -925,10 +932,7 @@ a {
 		gap: 8px;
 		text-align: left;
 		opacity: 0;
-		transform: translateY(-8px);
-		transition:
-			opacity 0.2s ease,
-			transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+		transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 	}
 
 	.topbar.is-open .topnav {
@@ -937,7 +941,6 @@ a {
 
 	.topbar.is-open .topnav-links {
 		opacity: 1;
-		transform: translateY(0);
 		padding-top: 12px;
 		padding-bottom: 8px;
 	}

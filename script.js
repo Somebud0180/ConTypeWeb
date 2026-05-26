@@ -179,6 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			}
 		});
 	}
+
 	const heroSlides = [
 		{
 			image: {
