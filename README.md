@@ -12,4 +12,3 @@ A static website with not much frills. Assets made in Figma.
 ---
 Made with ❤️, made with [Hack Club](https://hackclub.com/).
 <br>Created for [FlavorTown](https://flavortown.hackclub.com/), a Hack Club event.
-<br>Also part of [Macondo](https://macondo.hackclub.com/), a Hack Club event.
